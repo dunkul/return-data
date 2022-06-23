@@ -9,7 +9,7 @@
     ],
     "type": "library",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.1",
         "laravel/framework": "^8.0"
     },
     "license": "MIT",
