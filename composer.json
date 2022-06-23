@@ -1,0 +1,40 @@
+{
+    "name": "dunkul/return-data",
+    "description": "laravel simple response",
+    "keywords": [
+        "request",
+        "response",
+        "message",
+        "url"
+    ],
+    "type": "library",
+    "require": {
+        "php": "^7.4",
+        "laravel/framework": "^8.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dunkul",
+            "email": "dunkul@naver.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dunkul\\ReturnData\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+               "Dunkul\\ReturnData\\ReturnDataServiceProvider"
+            ],
+            "aliases": {
+                "ReturnData": "Dunkul\\ReturnData\\ReturnData"
+            },
+            "dont-discover": []
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
