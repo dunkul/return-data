@@ -1,4 +1,5 @@
 <?php
+
 namespace Dunkul\ReturnData;
 
 use Illuminate\Http\Request;
@@ -52,7 +53,7 @@ class ReturnDataClass
       $this->condition = $this->request->all();
 
       if (isset($this->condition['password']) && $this->condition['password']) {
-        $this->condition['password'] = '????';
+        unset($this->condition['password']);
       }
 
       foreach (['token', 'access_token'] as $value) {
@@ -64,9 +65,7 @@ class ReturnDataClass
 
     if ($this->message) {
       if (!is_array($this->message) || count($this->message) == 1) {
-        if (isset($this->defaultErrorCode[$code])) {
-          $this->message = ['code' => $this->defaultErrorCode[$code], 'message' => $this->message];
-        }
+        $this->message = ['code' => $this->defaultErrorCode[$code] ?? 500, 'message' => $this->message];
       } else {
         $this->message = ['code' => $this->message[0], 'message' => $this->message[1]];
       }
